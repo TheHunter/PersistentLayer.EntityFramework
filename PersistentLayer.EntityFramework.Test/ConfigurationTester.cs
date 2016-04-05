@@ -51,9 +51,9 @@ namespace PersistentLayer.EntityFramework.Test
             return new EfTransactionProvider(this.MakeContextProvider());
         }
 
-        protected IAdvancedContextProvider MakeAdvancedContextProvider()
+        protected IFutureContextProvider MakeAdvancedContextProvider()
         {
-            return new AdvancedContextProvider(this.MakeContextProvider());
+            return new FutureContextProvider(this.MakeContextProvider());
         }
     }
 }

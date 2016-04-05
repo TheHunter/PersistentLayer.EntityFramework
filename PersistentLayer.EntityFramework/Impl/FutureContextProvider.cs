@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Data.Entity.Infrastructure.Interception;
 using System.Linq;
 using PersistentLayer.EntityFramework.Extensions;
@@ -9,12 +8,12 @@ using PersistentLayer.EntityFramework.Reflection;
 
 namespace PersistentLayer.EntityFramework.Impl
 {
-    public class AdvancedContextProvider
-        : IAdvancedContextProvider
+    public class FutureContextProvider
+        : IFutureContextProvider
     {
         private readonly List<IFutureQuery> futureQueries;
 
-        public AdvancedContextProvider(IContextProvider contextProvider)
+        public FutureContextProvider(IContextProvider contextProvider)
         {
             this.futureQueries = new List<IFutureQuery>();
             this.ContextProvider = contextProvider;

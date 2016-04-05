@@ -2,11 +2,14 @@
 {
     public class EfContextProviderDAO
     {
-        public EfContextProviderDAO(IEfTransactionProvider contextProvider)
+        public EfContextProviderDAO(IEfTransactionProvider transactionProvider)
         {
-            this.ContextProvider = contextProvider;
+            this.TransactionProvider = transactionProvider;
+            this.FutureContextProvider = new FutureContextProvider(transactionProvider.ContextProvider);
         }
 
-        public IEfTransactionProvider ContextProvider { get; }
+        public IEfTransactionProvider TransactionProvider { get; }
+
+        public IFutureContextProvider FutureContextProvider { get; }
     }
 }

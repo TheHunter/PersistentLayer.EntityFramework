@@ -63,11 +63,11 @@
     <Compile Include="IContextProvider.cs" />
     <Compile Include="IEfTransactionProvider.cs" />
     <Compile Include="IFutureQueryBatch.cs" />
-    <Compile Include="Impl\AdvancedContextProvider.cs" />
+    <Compile Include="Impl\FutureContextProvider.cs" />
     <Compile Include="Impl\ContextProvider.cs" />
     <Compile Include="Impl\EfTransactionProvider.cs" />
     <Compile Include="Metadata\EntityMetadata.cs" />
-    <Compile Include="IAdvancedContextProvider.cs" />
+    <Compile Include="IFutureContextProvider.cs" />
     <Compile Include="Impl\EfContextProviderDAO.cs" />
     <Compile Include="Impl\EfCustomExtension.cs" />
     <Compile Include="Impl\EfQueryImplementor.cs" />

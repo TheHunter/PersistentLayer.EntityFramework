@@ -10,28 +10,28 @@ namespace PersistentLayer.EntityFramework.Impl
         : EfContextProviderDAO, IRootPagedDAO<TRootEntity>
         where TRootEntity : class
     {
-        public EfRootPagedDAO(IEfTransactionProvider contextProvider)
-            : base(contextProvider)
+        public EfRootPagedDAO(IEfTransactionProvider transactionProvider)
+            : base(transactionProvider)
         {
         }
 
         public TEntity FindBy<TEntity>(object identifier) where TEntity : class, TRootEntity
         {
-            return this.ContextProvider
+            return this.TransactionProvider
                 .ContextProvider
                 .FindBy<TEntity>(identifier);
         }
 
         public bool Exists<TEntity>(object identifier) where TEntity : class, TRootEntity
         {
-            return this.ContextProvider
+            return this.TransactionProvider
                 .ContextProvider
                 .Exists<TEntity>(identifier);
         }
 
         public bool Exists<TEntity>(Expression<Func<TEntity, bool>> predicate) where TEntity : class, TRootEntity
         {
-            return this.ContextProvider
+            return this.TransactionProvider
                 .ContextProvider
                 .Exists(predicate);
         }
@@ -43,42 +43,42 @@ namespace PersistentLayer.EntityFramework.Impl
 
         public TEntity UniqueResult<TEntity>(Expression<Func<TEntity, bool>> predicate) where TEntity : class, TRootEntity
         {
-            return this.ContextProvider
+            return this.TransactionProvider
                 .ContextProvider
                 .UniqueResult(predicate);
         }
 
         public IEnumerable<TEntity> FindAll<TEntity>() where TEntity : class, TRootEntity
         {
-            return this.ContextProvider
+            return this.TransactionProvider
                 .ContextProvider
                 .FindAll<TEntity>();
         }
 
         public IEnumerable<TEntity> FindAll<TEntity>(Expression<Func<TEntity, bool>> predicate) where TEntity : class, TRootEntity
         {
-            return this.ContextProvider
+            return this.TransactionProvider
                 .ContextProvider
                 .FindAll(predicate);
         }
 
         public TResult ExecuteExpression<TEntity, TResult>(Expression<Func<IQueryable<TEntity>, TResult>> queryExpr) where TEntity : class, TRootEntity
         {
-            return this.ContextProvider
+            return this.TransactionProvider
                 .ContextProvider
                 .ExecuteExpression(queryExpr);
         }
         
         public IPagedResult<TEntity> GetPagedResult<TEntity>(int startIndex, int pageSize, Expression<Func<TEntity, bool>> predicate) where TEntity : class, TRootEntity
         {
-            return this.ContextProvider
+            return this.TransactionProvider
                 .ContextProvider
                 .GetPagedResult(startIndex, pageSize, predicate);
         }
 
         public ITransactionProvider GetTransactionProvider()
         {
-            return this.ContextProvider;
+            return this.TransactionProvider;
         }
 
         public TEntity MakePersistent<TEntity>(TEntity entity) where TEntity : class, TRootEntity
@@ -117,27 +117,27 @@ namespace PersistentLayer.EntityFramework.Impl
         where TRootEntity : class
         where TEntity : class, TRootEntity
     {
-        public EfRootPagedDAO(IEfTransactionProvider contextProvider)
-            : base(contextProvider)
+        public EfRootPagedDAO(IEfTransactionProvider transactionProvider)
+            : base(transactionProvider)
         {
         }
         public TEntity FindBy(object identifier)
         {
-            return this.ContextProvider
+            return this.TransactionProvider
                 .ContextProvider
                 .FindBy<TEntity>(identifier);
         }
 
         public bool Exists(object identifier)
         {
-            return this.ContextProvider
+            return this.TransactionProvider
                 .ContextProvider
                 .Exists<TEntity>(identifier);
         }
 
         public bool Exists(Expression<Func<TEntity, bool>> predicate)
         {
-            return this.ContextProvider
+            return this.TransactionProvider
                 .ContextProvider
                 .Exists(predicate);
         }
@@ -150,42 +150,42 @@ namespace PersistentLayer.EntityFramework.Impl
 
         public TEntity UniqueResult(Expression<Func<TEntity, bool>> predicate)
         {
-            return this.ContextProvider
+            return this.TransactionProvider
                 .ContextProvider
                 .UniqueResult(predicate);
         }
 
         public IEnumerable<TEntity> FindAll()
         {
-            return this.ContextProvider
+            return this.TransactionProvider
                 .ContextProvider
                 .FindAll<TEntity>();
         }
 
         public IEnumerable<TEntity> FindAll(Expression<Func<TEntity, bool>> predicate)
         {
-            return this.ContextProvider
+            return this.TransactionProvider
                 .ContextProvider
                 .FindAll(predicate);
         }
 
         public TResult ExecuteExpression<TResult>(Expression<Func<IQueryable<TEntity>, TResult>> queryExpr)
         {
-            return this.ContextProvider
+            return this.TransactionProvider
                 .ContextProvider
                 .ExecuteExpression(queryExpr);
         }
 
         public IPagedResult<TEntity> GetPagedResult(int startIndex, int pageSize, Expression<Func<TEntity, bool>> predicate)
         {
-            return this.ContextProvider
+            return this.TransactionProvider
                 .ContextProvider
                 .GetPagedResult(startIndex, pageSize, predicate);
         }
 
         public ITransactionProvider GetTransactionProvider()
         {
-            return this.ContextProvider;
+            return this.TransactionProvider;
         }
 
         public TEntity MakePersistent(TEntity entity)

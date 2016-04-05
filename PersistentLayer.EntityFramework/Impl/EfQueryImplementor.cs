@@ -48,7 +48,7 @@ namespace PersistentLayer.EntityFramework.Impl
                 .ToList();
         }
 
-        public static IEnumerable<TEntity> FindAllFuture<TEntity>(this IAdvancedContextProvider contextProvider, Expression<Func<TEntity, bool>> predicate) where TEntity : class
+        public static IEnumerable<TEntity> FindAllFuture<TEntity>(this IFutureContextProvider contextProvider, Expression<Func<TEntity, bool>> predicate) where TEntity : class
         {
             var objQuery = contextProvider.ContextProvider.MakeObjectSet<TEntity>().Where(predicate);
             var future = contextProvider.AppendFutureEnumerable(objQuery);
