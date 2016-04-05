@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PersistentLayer.EntityFramework.Impl.AdvancedContextProvider">
+    <Position X="7.25" Y="4.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAgABAAAAABAAAAAAAAAAAAAAQAAAAgAAAAAAAgAA=</HashCode>
+      <FileName>Impl\AdvancedContextProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PersistentLayer.EntityFramework.Impl.ContextProvider">
+    <Position X="7.25" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACAAACAAEAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Impl\ContextProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PersistentLayer.EntityFramework.Impl.EfTransactionProvider">
+    <Position X="10.75" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABICAAAAAAAAAAAAACAAAAEAAAAAAAABEAIAA=</HashCode>
+      <FileName>Impl\EfTransactionProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="PersistentLayer.EntityFramework.IEfTransactionProvider">
+    <Position X="0.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IEfTransactionProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PersistentLayer.EntityFramework.IAdvancedContextProvider">
+    <Position X="3.5" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>IAdvancedContextProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
